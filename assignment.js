@@ -1,33 +1,29 @@
 //  https://github.com/meherinakter13/javascript-assignment
 
 // Convert kilometer to meter
-function kilometerToMeter(kilometer)
-{
-    if(kilometer < 0)
-    {
+function kilometerToMeter(kilometer){
+    if(kilometer < 0){
         console.log('You have given an invalid input');
+        return -1;
     }
-    else
-    {
+    else{
         var meter = kilometer * 1000;
         return meter;
     }
 }
 
-/*var result = kilometerToMeter(5);
+/*var result = kilometerToMeter(-5);
 console.log(result);*/
 
 
 
 // Budget calculation
-function budgetCalculator(watch,phone,laptop)
-{
-    if(watch < 0 || phone < 0 || laptop <0)
-    {
+function budgetCalculator(watch,phone,laptop){
+    if(watch < 0 || phone < 0 || laptop <0){
         console.log('You have given an invalid input');
+        return -1;
     }
-    else
-    {
+    else{
         costOfWatch = watch * 50;
         costOfphone = phone * 100;
         costOfLaptop = laptop * 500;
@@ -41,28 +37,24 @@ console.log(result);*/
 
 
 // Finding the Hotelcost
-function hotelCost(day)
-{
+function hotelCost(day){
     var cost = 0;
-    if(day < 0)
-    {
+    if(day < 0){
         console.log('You have given an invalid input');
+        return -1;
     }
-    else if(day <= 10)
-    {
+    else if(day <= 10){
         cost = day * 100;
         return cost;
     }
-    else if(day <= 20)
-    {
+    else if(day <= 20){
         var firstpart = 10 * 100;
         var remainingDay = day - 10;
         var secondpart = remainingDay * 80;
         cost = firstpart + secondpart;
         return cost;
     }
-    else
-    {
+    else{
         var firstpart = 10 * 100;
         var secondpart = 10 * 80;
         var remainingDay = day - 20;
@@ -78,26 +70,33 @@ console.log(result);*/
 
 //finding the largest name from an array
 
-function megaFriend(friendsName)
-{
-    if(friendsName <= 0)
-    {
-        console.log('You have given an invalid input');
-    }
-    else
-    {
-        var largeName = friendsName[0];
-        for(var i = 0; i < friendsName.length; i++)
-        {
-            var element = friendsName[i];
-            if(element.length > largeName.length)
-            {
-               largeName = element;
+function megaFriend(friendsName){
+    var largeName = friendsName[0];
+    var checkInput = 0;
+    for (var i = 0; i < friendsName.length; i++){
+        var nameType = typeof(friendsName[i]);
+        var dataType = typeof ("string");
+        var WhiteSpace = ' ';
+        var emptyString = '';
+        
+            if (friendsName.length < 1 || nameType != dataType || friendsName[i] == WhiteSpace || friendsName[i] == emptyString){
+                checkInput = 'Error';
             }
+    }
+
+    if(checkInput != 0){
+        console.log("You have given an invalid input'");
+        return -1;
+    } 
+
+    for(var i = 0; i < friendsName.length; i++){
+        var element = friendsName[i];
+        if(element.length > largeName.length){
+            largeName = element;
         }
     }
     return largeName;
 }
-var result = megaFriend(['']);
-console.log(result);
+/*var result = megaFriend(['ratriiiii', 'meherin', 'sumaiya','sumaiyaaaa']);
+console.log(result);*/
 
