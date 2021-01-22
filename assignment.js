@@ -76,10 +76,10 @@ function megaFriend(friendsName){
     for (var i = 0; i < friendsName.length; i++){
         var nameType = typeof(friendsName[i]);
         var dataType = typeof ("string");
-        var WhiteSpaces = ' ';
+        var whiteSpace = ' ';
         var emptyString = '';
 
-            if (friendsName.length < 1 || nameType != dataType || friendsName[i] == WhiteSpaces || friendsName[i] == emptyString){
+            if (friendsName.length < 1 || nameType != dataType || friendsName[i] == whiteSpace || friendsName[i] == emptyString){
                 checkInput = 'Error';
             }
     }
