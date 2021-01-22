@@ -24,10 +24,10 @@ function budgetCalculator(watch,phone,laptop){
         return -1;
     }
     else{
-        costOfWatch = watch * 50;
-        costOfphone = phone * 100;
-        costOfLaptop = laptop * 500;
-        totalCost = costOfWatch + costOfphone + costOfLaptop;
+        var costOfWatch = watch * 50;
+        var costOfphone = phone * 100;
+        var costOfLaptop = laptop * 500;
+        var totalCost = costOfWatch + costOfphone + costOfLaptop;
         return totalCost;
     }
 }
@@ -63,7 +63,7 @@ function hotelCost(day){
         return cost;
     }   
 }
-/*var result = hotelCost(11);
+/*var result = hotelCost(26);
 console.log(result);*/
 
 
